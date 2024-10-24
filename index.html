@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Gabriel Rincón López">
+    <meta name="description" content="Formulario con estilos CSS">
+    <meta content="keywords" content="CSS, HTML, Web, DAW">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario CSS</title>
+</head>
+
+<body>
+    <header>
+        <h1>Por favor, introduce los datos solicitados</h1>
+    </header>
+    <main>
+        <form action="#" name="formulary" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <p>
+                    <label for="name">Nombre: </label>
+                    <input id="name" name="name" value="" placeholder="Obligatorio" size="20" type="text" required>
+                </p>
+                <p>
+                    <label for="lastName">Apellidos: </label>
+                    <input id="lastName" name="lastName" value="" placeholder="Obligatorio" size="40" type="text"
+                        required>
+                </p>
+                <fieldset>
+                    <legend>Edad: </legend>
+                    <p>
+                        <label><input type="radio" name="age" value="18-25">18 a 25</label>
+                        <label><input type="radio" name="age" value="26-35">26 a 35</label>
+                        <label><input type="radio" name="age" value="36-45">36 a 45</label>
+                        <label><input type="radio" name="age" value="46-55">46 a 55</label>
+                        <label><input type="radio" name="age" value="55<">Mayor a 55</label>
+                        <label><input type="radio" name="age" value="NS/NC" checked>NS/NC</label>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Intereses: </legend>
+                    <p>
+                        <label>Arte y Literatura <input type="checkbox" name="op1" value="1"></label>
+                    </p>
+                    <p>
+                        <label>Ciencia y Tecnología <input type="checkbox" name="op2" value="2"></label>
+                    </p>
+                    <p>
+                        <label>Política y Sociedad <input type="checkbox" name="op3" value="3"></label>
+                    </p>
+                    <p>
+                        <label>Ocio y Deporte <input type="checkbox" name="op4" value="4"></label>
+                    </p>
+                    <p>
+                        <label>Cine y Televisión <input type="checkbox" name="op5" value="5"></label>
+                    </p>
+                </fieldset>
+                <p>
+                    <label for="postalCode">Código postal: </label>
+                    <input id="postalCode" name="postalCode" value="" size="8" type="text" required pattern="[0-9]{5}">
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>Otros datos</legend>
+                <h2>Color favorito</h2>
+                <p>
+                    <label><input type="radio" name="color" value="red" checked>Rojo</label>
+                    <label><input type="radio" name="color" value="blue">Azul</label>
+                    <label><input type="radio" name="color" value="yellow">Amarillo</label>
+                    <label><input type="radio" name="color" value="green">Verde</label>
+                </p>
+                <h2>Asignaturas favoritas</h2>
+                <p>
+                    <label><input type="checkbox" name="op1" value="1">DWEC</label>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="op2" value="2">DWES</label>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="op3" value="3">DIW</label>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="op4" value="4">DAW</label>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="op5" value="5">EIEM</label>
+                </p>
+                <h2>Probabilidad de aprobar</h2>
+                <p>
+                    <label for="perc">Porcentaje</label>
+                    <input id="perc" name="perc" value="0" type="number" min="0" max="100">
+                </p>
+            </fieldset>
+            <p>
+                <input type="submit" value="Enviar formulario" name="submit">
+                <input type="reset" value="Reiniciar formulario" name="reset">
+            </p>
+        </form>
+    </main>
+</body>
+
+</html>
