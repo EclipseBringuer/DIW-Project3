@@ -1,0 +1,41 @@
+:root {
+  --pink-background: #f8b6c1;
+  --beige-background: #faf0e6;
+  --purple: #663399;
+  --orange-background: #f5a07a;
+  --light-purple-border: #b69cdf;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--beige-background);
+}
+
+header h1 {
+  text-align: center;
+  color: var(--purple);
+}
+
+main {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+fieldset {
+  border: var(--light-purple-border) solid 3px;
+  background-color: var(--pink-background);
+  & legend {
+    background-color: var(--purple);
+    font-weight: 600;
+    color: white;
+  }
+}
+
+fieldset > fieldset {
+  background-color: var(--orange-background);
+}
+
+main ~ fieldset {
+  margin-bottom: 50px;
+}
