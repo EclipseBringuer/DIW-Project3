@@ -2,6 +2,7 @@
   --pink-background: #f8b6c1;
   --beige-background: #faf0e6;
   --purple: #663399;
+  --radio-age: #f568b4;
   --orange-background: #f5a07a;
   --light-purple-border: #9370db;
   --pink-radio-label: #f21e90;
@@ -10,6 +11,10 @@
   --confirmation-button-background: #54fa99;
   --confirmation-button-color: #1a6400;
   --reset-button-background: #f08180;
+  --turquoise-radio: #40e0d0;
+  --required-background-color: #db7093;
+  --normal-input-background: #d3d3d3;
+  --diw-color: #483d8c;
 }
 
 body {
@@ -18,6 +23,10 @@ body {
   background-color: var(--beige-background);
   color: var(--normal-text-color);
   font-weight: 600;
+}
+
+p:has(> input[type="submit"]) {
+  text-align: center;
 }
 
 h2 {
@@ -47,29 +56,76 @@ fieldset {
   & > & {
     background-color: var(--orange-background);
     padding: 0px 10px;
+    width: 60%;
+    &:last-of-type {
+      margin-top: 20px;
+    }
+  }
+  form > &:first-of-type {
+    margin-bottom: 10px;
   }
 }
 
-label:has(input[type="radio"]) {
-  color: var(--purple);
-  font-weight: 600;
-  word-spacing: 8px;
-  font-size: large;
-  &:has(input:checked) {
-    color: var(--pink-radio-label);
+label {
+  &[for="name"]::before,
+  &[for="lastName"]::before {
+    content: "» ";
+    color: yellow;
+    font-size: 20px;
+  }
+  &:has(input[type="radio"]) {
+    color: var(--purple);
+    font-weight: 600;
+    word-spacing: 8px;
+    font-size: large;
+    &:has(input:checked) {
+      color: var(--pink-radio-label);
+    }
   }
 }
 
-input.formAction {
-  padding: 10px 45px;
-  border-radius: 10px;
-  font-weight: 600;
-  font-size: large;
+input {
+  border-left: solid 3px black;
+  border-top: solid 3px black;
+  border-right: solid 3px gray;
+  border-bottom: solid 3px gray;
+  background-color: var(--normal-input-background);
+
+  &.formAction {
+    padding: 10px 45px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: large;
+  }
+
+  &[type="checkbox"] {
+    accent-color: var(--turquoise-radio);
+  }
+
+  &[name="asfav3"] {
+    outline: solid 5px var(--diw-color);
+  }
+
+  &:required {
+    background-color: var(--required-background-color);
+    &::placeholder {
+      color: lightgray;
+      font-style: italic;
+    }
+  }
+
+  &[name="age"] {
+    accent-color: var(--radio-age);
+    &:hover {
+      accent-color: var(--turquoise-radio);
+    }
+  }
 
   &[type="reset"] {
     color: var(--normal-text-color);
     background-color: var(--reset-button-background);
   }
+
   &[type="submit"] {
     color: var(--confirmation-button-color);
     background-color: var(--confirmation-button-background);
