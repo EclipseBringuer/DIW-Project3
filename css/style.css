@@ -3,16 +3,29 @@
   --beige-background: #faf0e6;
   --purple: #663399;
   --orange-background: #f5a07a;
-  --light-purple-border: #b69cdf;
+  --light-purple-border: #9370db;
+  --pink-radio-label: #f21e90;
+  --lilac: #8b008b;
+  --normal-text-color: #a52a2a;
+  --confirmation-button-background: #54fa99;
+  --confirmation-button-color: #1a6400;
+  --reset-button-background: #f08180;
 }
 
 body {
   margin: 0;
   font-family: sans-serif;
   background-color: var(--beige-background);
+  color: var(--normal-text-color);
+  font-weight: 600;
 }
 
-header h1 {
+h2 {
+  color: var(--lilac);
+  font-style: italic;
+}
+
+h1 {
   text-align: center;
   color: var(--purple);
 }
@@ -29,13 +42,36 @@ fieldset {
     background-color: var(--purple);
     font-weight: 600;
     color: white;
+    padding: 3px;
+  }
+  & > & {
+    background-color: var(--orange-background);
+    padding: 0px 10px;
   }
 }
 
-fieldset > fieldset {
-  background-color: var(--orange-background);
+label:has(input[type="radio"]) {
+  color: var(--purple);
+  font-weight: 600;
+  word-spacing: 8px;
+  font-size: large;
+  &:has(input:checked) {
+    color: var(--pink-radio-label);
+  }
 }
 
-main ~ fieldset {
-  margin-bottom: 50px;
+input.formAction {
+  padding: 10px 45px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: large;
+
+  &[type="reset"] {
+    color: var(--normal-text-color);
+    background-color: var(--reset-button-background);
+  }
+  &[type="submit"] {
+    color: var(--confirmation-button-color);
+    background-color: var(--confirmation-button-background);
+  }
 }
